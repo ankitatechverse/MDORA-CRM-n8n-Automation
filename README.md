@@ -1,6 +1,6 @@
 # MDORA — Simple AI Static Website + n8n Automation
 
-**One-liner:** A simple AI-powered static website (vibe-coding style) built with Vite that sends inquiry payloads to an n8n workflow which: (1) drafts an email based on inquiry + company info, and (2) appends user/contact info to an Excel/Google Sheet.
+A simple AI-powered static website (vibe-coding style) built with Vite that sends inquiry payloads to an n8n workflow which: (1) drafts an email based on inquiry + company info, and (2) appends user/contact info to an Excel/Google Sheet.
 
 ---
 
