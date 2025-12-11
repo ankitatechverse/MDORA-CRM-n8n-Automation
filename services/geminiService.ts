@@ -1,7 +1,4 @@
-import { GoogleGenAI, Type } from "@google/genai";
 import { StrategyResult } from "../types";
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const analyzeBusinessCase = async (problemStatement: string): Promise<StrategyResult> => {
   const modelId = "gemini-2.5-flash"; 
