@@ -1,0 +1,373 @@
+{
+  "name": "Tally Form - Website - CRM",
+  "nodes": [
+    {
+      "parameters": {
+        "formId": "rj5YdM"
+      },
+      "type": "n8n-nodes-tallyforms.tallyTrigger",
+      "typeVersion": 2,
+      "position": [
+        0,
+        160
+      ],
+      "id": "ebaa883e-8c57-4d4d-b774-7633ee584322",
+      "name": "Tally Trigger",
+      "webhookId": "c2cf546b-a2a8-4a3b-949f-28a7cc07b5c6",
+      "credentials": {
+        "tallyApi": {
+          "id": "uREFhPzb2WgNEOZA",
+          "name": "Tally account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5d35f873-5d70-45f3-aab9-b1b26edc8a3e",
+              "name": "First Name",
+              "value": "={{ $json.question_gM2lpP.value }}",
+              "type": "string"
+            },
+            {
+              "id": "87359f15-528e-442b-8c8a-28cab4567fad",
+              "name": "Last Name",
+              "value": "={{ $json.question_y9LQG8.value }}",
+              "type": "string"
+            },
+            {
+              "id": "55d4cda9-58cb-4319-a207-887e10af9b1f",
+              "name": "Email",
+              "value": "={{ $json.question_XWXagP.value }}",
+              "type": "string"
+            },
+            {
+              "id": "2d30f013-52ba-4ca0-9f91-53d9b740a975",
+              "name": "Job Title",
+              "value": "={{ $json.question_8QOBWl.value }}",
+              "type": "string"
+            },
+            {
+              "id": "536851dd-5a76-4517-af5c-56b8e9a22667",
+              "name": "Company Name",
+              "value": "={{ $json.question_06X9l9.value }}",
+              "type": "string"
+            },
+            {
+              "id": "edbd961b-fa2f-42cd-a69b-d545118fedb9",
+              "name": "Comapny Size",
+              "value": "={{ $json.question_zDl9Ok.value }}",
+              "type": "string"
+            },
+            {
+              "id": "0b9cc28c-af35-45a7-b410-87464b33d23e",
+              "name": "Project Stuff",
+              "value": "Ai agent stuff",
+              "type": "string"
+            },
+            {
+              "id": "e03cc31f-1e47-4e6e-bafd-8ccee1167071",
+              "name": "Budget",
+              "value": "50,000+",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        160
+      ],
+      "id": "2aeeaaf2-980d-41d6-a6f0-884df943d55f",
+      "name": "Set Form Field"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1M7mH3bA7yVV4A_MwS46jWWUBynux1JwH0SovkxirJ6c",
+          "mode": "list",
+          "cachedResultName": "Tally Form - Website",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1M7mH3bA7yVV4A_MwS46jWWUBynux1JwH0SovkxirJ6c/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1M7mH3bA7yVV4A_MwS46jWWUBynux1JwH0SovkxirJ6c/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "First Name": "={{ $json['First Name'] }}",
+            "Last Name": "={{ $json['Last Name'] }}",
+            "Work Email": "={{ $json.Email }}",
+            "Job Title": "={{ $json['Job Title'] }}",
+            "Company Name": "={{ $json['Company Name'] }}",
+            "Company Size": "={{ $json['Comapny Size'] }}",
+            "Submission Date": "={{ $now.setZone('Asia/Kolkata').toFormat('dd-MM-yyyy hh:mm a') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Submission Date",
+              "displayName": "Submission Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "First Name",
+              "displayName": "First Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Last Name",
+              "displayName": "Last Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Work Email",
+              "displayName": "Work Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Job Title",
+              "displayName": "Job Title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Company Name",
+              "displayName": "Company Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Company Size",
+              "displayName": "Company Size",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        512,
+        0
+      ],
+      "id": "6ca83a84-6e99-47ca-b997-88f8631c1983",
+      "name": "Append  consultant Info",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "bMFsv15AONUNKlbX",
+          "name": "Gmail -n8nSelfHost"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=First Name: {{ $json['First Name'] }}\nLast Name: {{ $json['Last Name'] }}\nEmail: {{ $json.Email }}\nJob Title: {{ $json['Job Title'] }}\nProject: {{ $json['Project Stuff'] }}\nBudget: {{ $json.Budget }}\n",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "# Lead Response Email Generator (Body Only)\n\nYou are an email assistant for MDORA AI, an AI automation consultancy.\n\nYour task is to generate a brief, warm, and professional follow-up email for new leads who submit a consultation request.  \nReturn only the email body as a plain string with no subject and no signature.\n\n## Tone\n- Friendly but professional\n- Confident, not salesy\n- Concise\n- Respect their time\n- Human, not corporate\n\n## Email Structure\n1. Thank them for reaching out (use their first name)\n2. Acknowledge their project or interests to show you read it\n3. Propose a call — either include a calendar link or ask for availability\n4. Close warmly (no signature)\n\n## Rules\n- Keep the email under 100 words\n- No filler phrases like “I hope this email finds you well”\n- Don’t oversell or list services\n- Focus on moving them to a call\n- If budget is high ($10k+), subtly show MDORA AI is a good fit for serious projects\n- If project details are vague, still respond normally\n- Don’t ask many clarifying questions — save that for the call\n\n## Output Format\nReturn only the email body as a string.  \nNo subject.  \nNo signature.\n"
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        448,
+        304
+      ],
+      "id": "fccdcfee-2803-4d9d-90a1-a5da6d0d90a1",
+      "name": "Draft Prompt"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        528,
+        528
+      ],
+      "id": "92d6e5c0-9493-4928-94fb-ddd0307ea183",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "vV2c4FZEiItB5xnR",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "subject": "MDORA AI Consultation Request",
+        "message": "={{ $json.text }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        800,
+        304
+      ],
+      "id": "e9fa839c-6266-41dd-9060-d70e5fd697cc",
+      "name": "Create a draft",
+      "webhookId": "081d8c14-57f0-449b-80f8-54a100b2b00f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "eI7thvSxfBfrAJjM",
+          "name": "Gmail  - n8nSelfHost"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Website Lead Funnel\n\n## How it Works\n- Automatically updates CRM with inbound lead information  \n- Generates a draft response in your voice\n\n## Resources\n- **Tally n8n integration**\n- **Tally API key**\n\n**Note:** **Whenever using for production, make sure to add the webhook in Tally.**\n",
+        "height": 416,
+        "width": 352
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -416,
+        32
+      ],
+      "id": "747c78da-6f86-4235-963e-1b78a90a2a3d",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Tally Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set Form Field",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Form Field": {
+      "main": [
+        [
+          {
+            "node": "Draft Prompt",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Append  consultant Info",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Draft Prompt": {
+      "main": [
+        [
+          {
+            "node": "Create a draft",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Draft Prompt",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "188ccb39-2071-4641-ae90-4c37ca132e11",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "6f1625073e00a9d10fbdf0ad8be4ebd48cece80c66cf9acc9b41769c0461c4a0"
+  },
+  "id": "yK14coYWYCptdMfM",
+  "tags": [
+    {
+      "updatedAt": "2025-12-11T12:34:36.231Z",
+      "createdAt": "2025-12-11T12:34:36.231Z",
+      "id": "OzxpQtsUxmY47u6v",
+      "name": "Lead"
+    },
+    {
+      "updatedAt": "2025-12-11T12:34:32.621Z",
+      "createdAt": "2025-12-11T12:34:32.621Z",
+      "id": "YGlE7QfnQNwEFkha",
+      "name": "Email"
+    },
+    {
+      "updatedAt": "2025-12-11T12:34:23.610Z",
+      "createdAt": "2025-12-11T12:34:23.610Z",
+      "id": "rLubAiInau100zMG",
+      "name": "CRM"
+    }
+  ]
+}
